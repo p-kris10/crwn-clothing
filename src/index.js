@@ -5,13 +5,15 @@ import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import {BrowserRouter} from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
-
+import { Provider } from 'react-redux';
+import store from './redux/store';
 ReactDOM.render(
   <React.StrictMode>
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
-    
+  <Provider store = {store}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
